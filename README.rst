@@ -8,14 +8,14 @@ plonetheme.depannenergiesnouvelles
 Overview
 --------
 
-plonetheme.depannenergiesnouvelles is an installable Plone Theme using `plone.app.theming`_, based on 
+plonetheme.depannenergiesnouvelles is an installable Plone Theme using `plone.app.theming`_, based on
 the default Sunburst Plone theme.
 
 Requirements
 ------------
 
-    * Tested with Plone 4.1.5 (http://plone.org/products/plone)
-    
+    * Tested with Plone 4.3.2 (http://plone.org/products/plone)
+
     * plone.app.theming (please configure your buildout corresponding to `plone.app.theming installation`_)
 
 Screenshot
@@ -64,9 +64,9 @@ Download ``plonetheme.depannenergiesnouvelles`` and use ``virtualenv`` and ``bui
 	cd plonetheme.depannenergiesnouvelles
 	virtualenv .
 	source bin/activate
-	(plonetheme.depannenergiesnouvelles) easy_install zc.buildout 
+	(plonetheme.depannenergiesnouvelles) easy_install zc.buildout
 	!!! check the buildout config file ``test-plone-base.cfg`` before running !!!
-	(plonetheme.depannenergiesnouvelles) ln -s test-plone-4.2.x.cfg buildout.cfg
+	(plonetheme.depannenergiesnouvelles) ln -s test-plone-4.3.x.cfg buildout.cfg
 	(plonetheme.depannenergiesnouvelles) python bootstrap.py
 	(plonetheme.depannenergiesnouvelles) bin/buildout
 	[...] be patient... [...]

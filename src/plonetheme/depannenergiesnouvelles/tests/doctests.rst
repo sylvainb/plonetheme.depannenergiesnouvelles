@@ -1,9 +1,9 @@
 ${namespace_package}.${package}
 ============================================================
 
-    >>> import ${namespace_package}.${package}
-    >>> ${namespace_package}.${package} # doctest: +ELLIPSIS
-    <module '${namespace_package}.${package}' from '...'>
+    >>> import plonetheme.depannenergiesnouvelles
+    >>> plonetheme.depannenergiesnouvelles # doctest: +ELLIPSIS
+    <module 'plonetheme.depannenergiesnouvelles' from '...'>
 
     >>> app = layer['app']
     >>> portal = layer['portal']

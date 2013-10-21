@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import string
 import unittest2 as unittest
 
@@ -145,7 +148,7 @@ class TestUninstall(unittest.TestCase):
         """ Validate our css are no longer registered in portal_css """
         portal_css = getToolByName(self.portal, 'portal_css')
         installedStylesheetIds = portal_css.getResourceIds()
-        expected = ['++theme++plonetheme.depannenergiesnouvelles/css/theme.css', ]
+        not_expected = ['++theme++plonetheme.depannenergiesnouvelles/css/theme.css', ]
         for e in not_expected:
             self.assertFalse(e in installedStylesheetIds, e)
 
@@ -153,7 +156,7 @@ class TestUninstall(unittest.TestCase):
         """ Validate our js are no longer registered in portal_css """
         portal_css = getToolByName(self.portal, 'portal_javascripts')
         installedJavaScriptIds = portal_css.getResourceIds()
-        expected = ['++theme++plonetheme.depannenergiesnouvelles/js/theme.js', ]
+        not_expected = ['++theme++plonetheme.depannenergiesnouvelles/js/theme.js', ]
         for e in not_expected:
             self.assertFalse(e in installedJavaScriptIds, e)
 
