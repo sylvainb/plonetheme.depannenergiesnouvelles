@@ -3,6 +3,9 @@
   <version>1000</version>
   <dependencies>
     <dependency>profile-plone.app.theming:default</dependency>
+    <dependency>profile-Products.PloneFormGen:default</dependency>
     <dependency>profile-webcouturier.dropdownmenu:default</dependency>
+    <dependency>profile-collective.quickupload:default</dependency>
+    <dependency>profile-collective.googleanalytics:default</dependency>
   </dependencies>
 </metadata>
