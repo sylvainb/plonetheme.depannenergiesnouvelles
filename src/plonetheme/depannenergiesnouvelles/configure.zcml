@@ -1,0 +1,51 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    i18n_domain="plonetheme.depannenergiesnouvelles">
+
+  <!-- http://developer.plone.org/reference_manuals/active/five-grok/index.html -->
+  <include package="five.grok" />
+  <grok:grok package="." />
+
+  <five:registerPackage package="." initialize=".initialize" />
+  <includeDependencies package="." /><!-- Else tests are broken -->
+
+  <include package=".browser" />
+
+  <i18n:registerTranslations directory="locales" />
+
+  <cmf:registerDirectory name="plonetheme_depannenergiesnouvelles_custom"/>
+
+  <!-- Static resources at /++theme++plonetheme.depannenergiesnouvelles -->
+  <include package="plone.resource" file="meta.zcml"/>
+  <plone:static directory="static" type="theme" name="plonetheme.depannenergiesnouvelles" />
+
+  <!-- j3c.jbot overrides -->
+  <include package="z3c.jbot" file="meta.zcml" /><!-- Else tests are broken -->
+  <browser:jbot
+      directory="jbot"
+      layer=".browser.interfaces.IThemeSpecific" />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="plonetheme.depannenergiesnouvelles"
+      directory="profiles/default"
+      description="Installs the plonetheme.depannenergiesnouvelles package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="plonetheme.depannenergiesnouvelles uninstall"
+      directory="profiles/uninstall"
+      description="Uninstalls the plonetheme.depannenergiesnouvelles package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <include package=".upgrades" />
+
+</configure>

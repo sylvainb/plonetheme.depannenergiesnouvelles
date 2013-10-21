@@ -1,0 +1,437 @@
+/*************************
+ *  TinyMCE fix
+ * **********************/
+
+.ploneSkin table.mceToolbar {
+    float: none!important;
+}
+
+/*************************
+ *  MAIN ELEMENTS
+ * **********************/
+
+/* We use max-width to keep the fluid layout for small device.
+   60em is equivalent to 960px in this case, and every grid
+   cell will be 40px with 10px padding. */
+
+#visual-portal-wrapper { max-width: 60em; margin: 0 auto; }
+
+body {
+  font: 100% Lato, FreeSans, sans-serif;
+  background-color: #ddd;
+}
+#portal-top, #portal-columns, #portal-footer {
+  background-color: #ffffff;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Lato, Arial, FreeSans, sans-serif;
+}
+
+/* Change the link color (or the navigation link  background) */
+
+a:link, a:visited, #content a:link, #content a:visited, dl.portlet a:link, dl.portlet a:visited {
+    color: #50af31;
+}
+
+/* Change the edit bar color */
+/*
+#contentActionMenus,
+dl.actionMenu.activated dd,
+#content-views,
+#edit-bar {
+    background-color: blue;
+    border-color: blue;
+}
+dl.actionMenu a {
+    background-color: blue;
+}
+*/
+
+/* Hide the path bar (aka. breadcrumbs) */
+/*
+#breadcrumbs-you-are-here,
+#breadcrumbs-home,
+#breadcrumbs-current,
+#breadcrumbs-1 {
+    display: none;
+}
+*/
+
+
+/*************************
+ *  WEB FONTS
+ * **********************/
+
+ /* Web font http://www.google.com/fonts */
+
+ @font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lato Italic'), local('Lato-Italic'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+
+/*************************
+ *  HEADER
+ * **********************/
+
+#portal-top > div {
+  background-color: #50AF31;
+  background-image: url('/++theme++plonetheme.depannenergiesnouvelles/images/header-gradien-vert.jpg');
+  background-repeat: repeat-y;
+}
+
+#portal-header {
+  background-image: url('/++theme++plonetheme.depannenergiesnouvelles/images/header-globe-vert.jpg');
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+#portal-logo {
+  margin: 1.375em 1.375em;
+  border: 5px solid white;
+}
+
+#header_phone_text {
+  /* display: none; */
+  position: absolute;
+  color: #014706;
+  width: 250px;
+  height: 40px;
+  top: 50px;
+  left: 470px;
+  padding-left: 45px;
+  background-color: transparent;
+  background: url('/++theme++plonetheme.depannenergiesnouvelles/images/header-phone-icon.png') no-repeat 0 1px;
+  z-index: 100;
+}
+/* hide personnaltools for anonymous users */
+#portal-personaltools {
+  display:none;
+}
+.userrole-member #portal-personaltools {
+  display:block;
+  float: none;
+  position: absolute;
+  top: 0;
+  left: 40%;
+  right: inherit;
+}
+
+#portal-searchbox {
+  display: none;
+  margin-right: 1em;
+}
+.searchSection {
+  display: none;
+}
+#LSResult {
+  margin: 0 0 0 -7em;
+  background: transparent;
+}
+#LSResult fieldset {
+  background-color: #FFFFFF;
+}
+
+#portal-globalnav {
+    margin: 0 0 0 0;
+}
+
+#portal-globalnav li a {
+  text-transform: uppercase;
+  padding: 0.8em 1em 0.8em 1em;
+  font-weight: bold;
+}
+#portal-globalnav .submenu a {
+    color: #50af31 !important;
+}
+#portal-globalnav .selected a, #portal-globalnav a:hover,
+#portal-globalnav .submenu a:hover {
+  background-color: #50af31 !important;
+  color:#FFFFFF!important;
+}
+/* Hide additional fake menu for mobile phone
+   => See portal_view_customization => plone.global_sections from
+      webcouturier dropdown
+   => See cusom mediaqueries bellow
+*/
+#portal-globalnav #portaltab-sitemap {
+  display:none;
+}
+
+/*************************
+ *  LARGE IMAGES
+ * **********************/
+
+/* image size is : 250 x 940 */
+
+/* ACCUEIL */
+.section-front-page #portal-column-content {
+  background-image: url('/++theme++plonetheme.depannenergiesnouvelles/images/large-images/panneaux-photovoltaique-2.jpg');
+  background-repeat: repeat-x;
+  padding-top: 250px;
+}
+
+/* PRESTATIONS */
+.section-prestations #portal-column-content {
+  background-image: url('/++theme++plonetheme.depannenergiesnouvelles/images/large-images/tools.jpg');
+  background-repeat: repeat-x;
+  padding-top: 163px;
+}
+
+/* TARIFS */
+.section-tarifs #portal-column-content {
+  background-image: url('/++theme++plonetheme.depannenergiesnouvelles/images/large-images/calculatrice.jpg');
+  background-repeat: repeat-x;
+  padding-top: 250px;
+}
+
+/* LES ENERGIES */
+.section-les-energies #portal-column-content {
+  background-image: url('/++theme++plonetheme.depannenergiesnouvelles/images/large-images/panneaux-photovoltaique-1.jpg');
+  background-repeat: repeat-x;
+  padding-top: 250px;
+}
+
+/* LES ENERGIES > SOLAIRE THERMIQUE */
+.section-les-energies.subsection-solaire-thermique #portal-column-content {
+  background-image: url('/++theme++plonetheme.depannenergiesnouvelles/images/large-images/panneaux-photovoltaique-4.jpg');
+  background-repeat: repeat-x;
+  padding-top: 250px;
+}
+
+/* LES ENERGIES > CHAUFFAGE BOIS */
+.section-les-energies.subsection-chauffage-bois #portal-column-content {
+  background-image: url('/++theme++plonetheme.depannenergiesnouvelles/images/large-images/granules-bois.jpg');
+  background-repeat: repeat-x;
+  padding-top: 250px;
+}
+
+/* LES ENERGIES > PHOTOVOLTAIQUE */
+.section-les-energies.subsection-photovoltaique #portal-column-content {
+  background-image: url('/++theme++plonetheme.depannenergiesnouvelles/images/large-images/panneaux-photovoltaique-3.jpg');
+  background-repeat: repeat-x;
+  padding-top: 250px;
+}
+
+/* NOUS CONTACTER */
+.section-nous-contacter #portal-column-content {
+  background-image: url('/++theme++plonetheme.depannenergiesnouvelles/images/large-images/contact.jpg');
+  background-repeat: repeat-x;
+  padding-top: 230px;
+}
+
+/* MENTIONS LEGALES */
+.section-mentions-legales #portal-column-content {
+  background-image: url('/++theme++plonetheme.depannenergiesnouvelles/images/large-images/panneaux-photovoltaique-1.jpg');
+  background-repeat: repeat-x;
+  padding-top: 250px;
+}
+
+/*************************
+ *  CONTENT
+ * **********************/
+
+#portal-breadcrumbs {
+  font-size: 80%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0.25em;
+}
+
+#content .pullquote {
+  color: #646464;
+  font-family: arial;
+  font-size: 18px;
+  letter-spacing: -0.08em !important;
+  line-height: 1.25em;
+  margin: 0.5em;
+  padding: 0.5em;
+  border-top: 1px solid #646464;
+  border-bottom: 1px solid #646464;
+}
+
+.documentDescription {
+  padding-bottom: 1em;
+}
+
+dl#document-toc {
+  margin: 1em;
+  font-size: 100%;
+  border: 1px solid #50af31;
+}
+
+dl#document-toc dt {
+  margin: 0;
+  background-color: #50af31;
+  color: #ffffff;
+}
+
+/*************************
+ *  HOME PAGE CONTENT
+ * **********************/
+
+/* Light bow for "Mentions sur les Décrets" links
+   See JS file for the overlays setup */
+.home_decret_overlay {
+    left: 5%!important;
+    width: 85%!important;
+}
+
+/*************************
+ *  BELLOW CONTENT
+ * **********************/
+
+/* Keywords */
+#viewlet-below-content #category .link-category {
+  margin: 0.1em;
+}
+#viewlet-below-content #category span{
+    line-height: 2em;
+}
+
+/*************************
+ *  PAGE Nous contacter
+ * **********************/
+
+.section-nous-contacter #fg-base-edit {
+  padding:1em;
+  margin-top: 2em;
+  border:1px dotted #50af31;
+}
+/* remove maps iframe when the contact page is open in a popup */
+.pb-ajax #contact-maps-iframe {
+  display:none;
+}
+
+/*************************
+ *  FOOTER
+ * **********************/
+
+#portal-footer {
+  display:none;
+}
+
+/*************************
+ *  CUSTOM MEDIA QUERIES
+ * **********************/
+
+/* In general width is more versatile when it comes to creating responsive webpages,
+   though device-width is useful when you wish to specifically target mobile devices
+   (and not desktops with a small browser window for example)
+
+   http://cssmediaqueries.com/
+   Target devices : http://cssmediaqueries.com/target/ ; */
+
+@media screen and (max-width: 910px) {
+
+  /* Cache le globe vert */
+  #portal-header {
+    background-image:none;
+  }
+
+}
+
+@media screen and (max-width: 755px) {
+
+  /* Cache le texte avec le numero de telephone */
+  #header_phone_text {
+    display: none;
+  }
+
+  /* Diminue les marges autour du logo */
+  #portal-logo {
+    margin: 0.375em 0.375em;
+  }
+
+  /* Cache le menu et affiche un lien pour l'afficher et le cacher
+     Par defaut, sans JS le lien mene vers le sitemap du site.
+  */
+  #portal-globalnav li {
+    float:none;
+    display:none;
+  }
+  #portal-globalnav ul.submenu {
+    display:none!important;
+  }
+  #portal-globalnav li#portaltab-sitemap {
+    display:block;
+  }
+  #portal-globalnav li#portaltab-sitemap a {
+    background-image: url('/++theme++plonetheme.depannenergiesnouvelles/images/mobile-menu-button.jpg');
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-left: 40px;
+  }
+  .template-sitemap .documentDescription {
+    display:none;
+  }
+
+  /* Mise en exergue du message sur la page d'accueil */
+  .section-front-page #content .pullquote {
+    float: none;
+    width: auto;
+    margin-bottom: 1em;
+  }
+
+  /* Map de la page de contact */
+  #contact-maps-iframe {
+    float: none!important;
+  }
+  #contact-maps-iframe iframe {
+    width: 100%;
+  }
+
+  /* Sommaires d'articles */
+  #content dl#document-toc {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Les images (!!! do not apply a width in the image tag) */
+  #content img {
+    max-width:100%;
+    max-height:100%;
+  }
+
+
+}
+
+@media screen and (min-width: 755px) {
+
+  /* Etre sur de bien afficher le menu normal quand on augmente la taille de l'ecran,
+     cela parceque des changements sont fait dynamiquement en javascript sur le css */
+  #portal-globalnav li {
+    float:left;
+    display:block!important;
+  }
+  #portal-globalnav li#portaltab-sitemap {
+    display:none!important;
+  }
+  .template-sitemap .documentDescription {
+    display:none;
+  }
+
+}
+
+/* Overrides some default in Plone mobile.css */
+@media handheld, screen and (max-device-width: 480px) {
+  #portal-logo {
+    display: inline-block;
+  }
+}
+
+

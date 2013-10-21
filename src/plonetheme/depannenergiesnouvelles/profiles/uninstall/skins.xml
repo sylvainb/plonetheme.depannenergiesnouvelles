@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<object name="portal_skins" allow_any="False" cookie_persistence="False"
+   default_skin="plonetheme.depannenergiesnouvelles">
+
+ <object name="plonetheme_depannenergiesnouvelles_custom" remove="True"
+         meta_type="Filesystem Directory View"
+         directory="plonetheme.depannenergiesnouvelles:skins/plonetheme_depannenergiesnouvelles_custom"/>
+
+ <skin-path name="plonetheme.depannenergiesnouvelles" based-on="Sunburst Theme">
+  <layer name="plonetheme_depannenergiesnouvelles_custom" insert-after="custom" remove="True" />
+ </skin-path>
+
+</object>

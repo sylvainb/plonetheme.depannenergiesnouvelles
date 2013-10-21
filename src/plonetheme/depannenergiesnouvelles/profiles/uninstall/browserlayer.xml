@@ -1,0 +1,4 @@
+<layers>
+    <layer name="plonetheme.depannenergiesnouvelles Theme" remove="True"
+           interface="plonetheme.depannenergiesnouvelles.browser.interfaces.IThemeSpecific" />
+</layers>
